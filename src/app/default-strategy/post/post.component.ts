@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, ElementRef, AfterViewChecked, NgZone, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, AfterViewChecked, NgZone, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'dcd-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class PostComponent implements OnInit, AfterViewChecked {
 

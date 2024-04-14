@@ -1,15 +1,15 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, NgZone } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, NgZone, AfterViewChecked } from '@angular/core';
 
 @Component({
   selector: 'dcd-comment-list',
   templateUrl: './comment-list.component.html',
   styleUrls: ['./comment-list.component.css']
 })
-export class CommentListComponent implements OnInit {
+export class CommentListComponent implements OnInit, AfterViewChecked {
 
-  @Input() comments
+  @Input() comments;
   @Output() addComment = new EventEmitter();
-  newComment
+  newComment;
 
   constructor(private el: ElementRef, private zone: NgZone) { }
 
@@ -18,11 +18,11 @@ export class CommentListComponent implements OnInit {
 
   ngAfterViewChecked(): void {
     this.zone.runOutsideAngular(() => {
-      this.el.nativeElement.classList.add('highlight')
+      this.el.nativeElement.classList.add('highlight');
       setTimeout(() => {
-        this.el.nativeElement.classList.remove('highlight')
-      }, 1500)
-    })
+        this.el.nativeElement.classList.remove('highlight');
+      }, 1500);
+    });
   }
 
 }

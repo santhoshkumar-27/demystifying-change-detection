@@ -1,7 +1,6 @@
 {
   "name": "demystifying-change-detection",
   "version": "0.0.0",
-  "homepage": "https://pankajparkar.github.io/demystifying-change-detection/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

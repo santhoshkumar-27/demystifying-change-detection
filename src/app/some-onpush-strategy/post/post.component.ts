@@ -13,7 +13,7 @@ export class PostComponent implements OnInit, AfterViewChecked {
   constructor(private el: ElementRef, private zone: NgZone) { }
 
   addComment (post, newComment) {
-    post.comments.push({text: newComment})
+    post.comments.push({text: newComment});
   }
 
   ngOnInit() {
@@ -21,11 +21,11 @@ export class PostComponent implements OnInit, AfterViewChecked {
 
   ngAfterViewChecked(): void {
     this.zone.runOutsideAngular(() => {
-      this.el.nativeElement.classList.add('highlight')
+      this.el.nativeElement.classList.add('highlight');
       setTimeout(() => {
-        this.el.nativeElement.classList.remove('highlight')
-      }, 1500)
-    })
+        this.el.nativeElement.classList.remove('highlight');
+      }, 1500);
+    });
   }
 
 }
